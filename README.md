@@ -1,167 +1,109 @@
-# 🧠 LeetCode Problems
+# LeetCode Problem Solutions
 
-> A structured collection of LeetCode solutions, problem-solving approaches, and DSA patterns — built consistently to improve algorithmic thinking and coding skills.
+A curated collection of Python-based LeetCode solutions focused on clear reasoning, algorithmic patterns, and efficient implementations. This repository is organized by problem and designed for consistent DSA practice and revision.
 
 [![LeetCode](https://img.shields.io/badge/LeetCode-Profile-orange?logo=leetcode)](https://leetcode.com/)
-[![Language](https://img.shields.io/badge/Language-C%2B%2B-blue?logo=c%2B%2B)](https://isocpp.org/)
-[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-2-success)](.)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-Python-3776AB?logo=python)](https://www.python.org/)
+[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-12-success)](.)
+[![Repository](https://img.shields.io/badge/Repo-DSA%20Practice-black?logo=github)](.)
 
----
+## Overview
 
-## 📌 About
+This repository contains solutions to a growing set of LeetCode problems. Each folder is organized by problem number and title, with a solution file and a short problem statement summary. The emphasis is on understanding the pattern behind each solution, analyzing time and space complexity, and improving problem-solving habits over time.
 
-This repository contains my solutions to **LeetCode problems**, organized to make DSA practice easier to understand, revise, and track.
+## Progress
 
-The goal is not just to solve problems, but to develop a strong understanding of:
+| Difficulty | Count |
+|---|---:|
+| Easy | 5 |
+| Medium | 6 |
+| Hard | 1 |
+| Total | 12 |
 
-- 🧩 Data Structures
-- ⚡ Algorithms
-- 🧠 Problem-Solving Patterns
-- ⏱️ Time & Space Complexity
-- 🎯 Interview-Oriented DSA
-- 📈 Consistent problem-solving habits
-
----
-
-## 📊 Progress
-
-| Difficulty | Solved |
-|------------|--------|
-| 🟢 Easy | 2 |
-| 🟡 Medium | 0 |
-| 🔴 Hard | 0 |
-| **Total** | **2** |
-
-> This table will be updated as new problems are solved.
-
----
-
-## 🗂️ Problems
-
-### 🟢 Easy
-
-| # | Problem | Topic | Solution |
-|---|---------|-------|----------|
-| 2 | Add Two Numbers | Linked List | [View Solution](./2-add-two-numbers) |
-| 9 | Palindrome Number | Math | [View Solution](./9-palindrome-number) |
-
----
-
-## 🧩 Topics
-
-Problems will gradually be organized around common DSA patterns and topics:
-
-- Arrays
-- Strings
-- Hash Tables
-- Two Pointers
-- Sliding Window
-- Binary Search
-- Linked Lists
-- Stacks & Queues
-- Trees
-- Binary Search Trees
-- Heaps
-- Graphs
-- Recursion
-- Backtracking
-- Greedy
-- Dynamic Programming
-- Bit Manipulation
-- Math
-
----
-
-## 🧠 Problem-Solving Approach
-
-For every problem, the focus is on understanding **why the solution works**, not just getting an accepted submission.
-
-The preferred workflow is:
+## Repository Layout
 
 ```text
-Understand the Problem
-        ↓
-Identify the Pattern
-        ↓
-Think of a Brute Force Approach
-        ↓
-Optimize the Approach
-        ↓
-Analyze Complexity
-        ↓
-Implement
-        ↓
-Test Edge Cases
-        ↓
-Review & Learn
+.
+├── README.md
+├── .gitignore
+├── validate_solutions.py
+├── 1-two-sum/
+├── 2-add-two-numbers/
+├── 3-longest-substring-without-repeating-characters/
+├── 4-median-of-two-sorted-arrays/
+├── 5-longest-palindromic-substring/
+├── 6-zigzag-conversion/
+├── 7-reverse-integer/
+├── 8-string-to-integer-atoi/
+├── 9-palindrome-number/
+├── 11-container-with-most-water/
+├── 13-roman-to-integer/
+├── 14-longest-common-prefix/
+└── ...
 ```
 
----
+## Problem Index
 
-## ⏱️ Complexity
+### Easy
 
-Solutions aim to clearly document:
+| # | Problem | Solution |
+|---|---|---|
+| 1 | Two Sum | [Open](./1-two-sum) |
+| 7 | Reverse Integer | [Open](./7-reverse-integer) |
+| 9 | Palindrome Number | [Open](./9-palindrome-number) |
+| 13 | Roman to Integer | [Open](./13-roman-to-integer) |
+| 14 | Longest Common Prefix | [Open](./14-longest-common-prefix) |
 
-- **Time Complexity**
-- **Space Complexity**
-- **Why the complexity is optimal**
-- **Important edge cases**
+### Medium
 
-Example:
+| # | Problem | Solution |
+|---|---|---|
+| 2 | Add Two Numbers | [Open](./2-add-two-numbers) |
+| 3 | Longest Substring Without Repeating Characters | [Open](./3-longest-substring-without-repeating-characters) |
+| 5 | Longest Palindromic Substring | [Open](./5-longest-palindromic-substring) |
+| 6 | Zigzag Conversion | [Open](./6-zigzag-conversion) |
+| 8 | String to Integer (atoi) | [Open](./8-string-to-integer-atoi) |
+| 11 | Container With Most Water | [Open](./11-container-with-most-water) |
 
-```text
-Time Complexity: O(n)
-Space Complexity: O(1)
+### Hard
+
+| # | Problem | Solution |
+|---|---|---|
+| 4 | Median of Two Sorted Arrays | [Open](./4-median-of-two-sorted-arrays) |
+
+## Problem-Solving Workflow
+
+Each solution is intended to be reviewed through the same lens:
+
+1. Understand the problem carefully.
+2. Identify the underlying pattern or technique.
+3. Consider a brute-force solution.
+4. Optimize for time and space.
+5. Validate edge cases thoroughly.
+6. Document the final complexity and reasoning.
+
+## Validation
+
+The repository includes a lightweight validation script to test the core sample cases across the implemented problems:
+
+```bash
+python validate_solutions.py
 ```
 
----
+## Roadmap
 
-## 📚 Learning Resources
+- [x] Establish repository structure
+- [x] Add initial problem solutions
+- [x] Improve README quality and tracking
+- [x] Add repository-level validation script
+- [ ] Expand the set of solved problems
+- [ ] Add more detailed notes and complexity breakdowns per problem
+- [ ] Improve consistency across all solution folders
 
-Useful resources for strengthening DSA fundamentals:
+## Notes
 
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [CP-Algorithms](https://cp-algorithms.com/)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/)
+The focus remains on building strong fundamentals, not just finishing a list of problems. Consistency, pattern recognition, and repeated review are the real long-term gains.
 
----
+## Author
 
-## 🚀 Roadmap
-
-- [x] Start solving LeetCode problems
-- [x] Create repository structure
-- [ ] Solve 25 problems
-- [ ] Solve 50 problems
-- [ ] Solve 100 problems
-- [ ] Cover major DSA patterns
-- [ ] Complete Top Interview 150
-- [ ] Add complexity analysis
-- [ ] Add problem-solving notes
-- [ ] Add progress tracking
-- [ ] Add automated statistics
-
----
-
-## 🎯 Goal
-
-> **Consistency over quantity.**
-
-The long-term goal is to build strong problem-solving fundamentals and become comfortable solving unfamiliar algorithmic problems.
-
----
-
-## ⭐ Progress Matters
-
-Every solved problem represents another step toward becoming a better problem solver.
-
-If this repository helps you in your DSA journey, consider giving it a ⭐.
-
----
-
-### 👩‍💻 Author
-
-**Roshni Undhad**
-
-Built with consistency, curiosity, and lots of problem solving. 🚀
+Roshni Undhad
