@@ -130,6 +130,10 @@ TESTS = [
 
 
 def run_case(name, file_name, class_name, method_name, case):
+    module_path = ROOT / name / file_name
+    if not module_path.exists():
+        raise FileNotFoundError(f"Missing test target: {module_path}")
+
     instance = load_solution(name, file_name, class_name)
     method = getattr(instance, method_name)
     if name == "2-add-two-numbers":
