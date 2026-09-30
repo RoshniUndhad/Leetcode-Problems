@@ -30,8 +30,11 @@ def linked_list_to_list(node):
 def load_solution(problem_dir, file_name, class_name):
     module_path = ROOT / problem_dir / file_name
     spec = importlib.util.spec_from_file_location(problem_dir.replace("-", "_"), module_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Unable to load solution module: {module_path}")
+
     module = importlib.util.module_from_spec(spec)
-    if problem_dir == "2-add-two-numbers":
+    if problem_dir in {"2-add-two-numbers", "19-remove-nth-node-from-end-of-list"}:
         module.ListNode = ListNode
     spec.loader.exec_module(module)
     return getattr(module, class_name)()
@@ -65,6 +68,66 @@ TESTS = [
         "Solution",
         "longestCommonPrefix",
         [(["flower", "flow", "flight"], "fl"), (["dog", "racecar", "car"], ""), (["leetcode"], "leetcode")],
+    ),
+    (
+        "15-3sum",
+        "3sum.py",
+        "Solution",
+        "threeSum",
+        [
+            ([-1, 0, 1, 2, -1, -4], [[-1, -1, 2], [-1, 0, 1]]),
+            ([0, 1, 1], []),
+            ([0, 0, 0], [[0, 0, 0]]),
+        ],
+    ),
+    (
+        "16-3sum-closest",
+        "3sum-closest.py",
+        "Solution",
+        "threeSumClosest",
+        [([-1, 2, 1, -4], 1, 2), ([0, 0, 0], 1, 0), ([1, 1, 1, 0], 100, 3)],
+    ),
+    (
+        "17-letter-combinations-of-a-phone-number",
+        "letter-combinations-of-a-phone-number.py",
+        "Solution",
+        "letterCombinations",
+        [
+            ("23", ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]),
+            ("", []),
+            ("2", ["a", "b", "c"]),
+        ],
+    ),
+    (
+        "18-4sum",
+        "4sum.py",
+        "Solution",
+        "fourSum",
+        [
+            ([1, 0, -1, 0, -2, 2], 0, [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]),
+            ([2, 2, 2, 2, 2], 8, [[2, 2, 2, 2]]),
+            ([1, 2, 3], 6, []),
+        ],
+    ),
+    (
+        "19-remove-nth-node-from-end-of-list",
+        "remove-nth-node-from-end-of-list.py",
+        "Solution",
+        "removeNthFromEnd",
+        [([1, 2, 3, 4, 5], 2, [1, 2, 3, 5]), ([1], 1, []), ([1, 2], 1, [1])],
+    ),
+    (
+        "20-valid-parentheses",
+        "valid-parentheses.py",
+        "Solution",
+        "isValid",
+        [
+            ("()", True),
+            ("()[]{}", True),
+            ("(]", False),
+            ("([)]", False),
+            ("{[]}", True),
+        ],
     ),
     (
         "2-add-two-numbers",
@@ -103,7 +166,13 @@ TESTS = [
         "zigzag-conversion.py",
         "Solution",
         "convert",
-        [("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"), ("PAYPALISHIRING", 4, "PINALSIGYAHRPI"), ("A", 1, "A")],
+        [
+            ("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"),
+            ("PAYPALISHIRING", 4, "PINALSIGYAHRPI"),
+            ("A", 1, "A"),
+            ("AB", 3, "AB"),
+            ("ABCDEF", 2, "ACEBDF"),
+        ],
     ),
     (
         "7-reverse-integer",
@@ -144,15 +213,40 @@ def run_case(name, file_name, class_name, method_name, case):
         )
         return
 
-    if method_name == "twoSum":
-        nums, target, expected = case
-        assert method(nums, target) == expected, f"{name}: expected {expected}, got {method(nums, target)}"
+    if name == "19-remove-nth-node-from-end-of-list":
+        values, n, expected = case
+        actual = linked_list_to_list(method(make_linked_list(values), n))
+        assert actual == expected, f"{name}: expected {expected}, got {actual}"
         return
 
-    if method_name in {"findMedianSortedArrays"}:
+    if method_name == "twoSum":
+        nums, target, expected = case
+        actual = method(nums, target)
+        assert actual == expected, f"{name}: expected {expected}, got {actual}"
+        return
+
+    if method_name == "findMedianSortedArrays":
         left, right, expected = case
         actual = method(left, right)
         assert abs(actual - expected) < 1e-9, f"{name}: expected {expected}, got {actual}"
+        return
+
+    if method_name in {"threeSum", "fourSum"}:
+        if method_name == "threeSum":
+            nums, expected = case
+            actual = method(nums)
+        else:
+            nums, target, expected = case
+            actual = method(nums, target)
+        actual = sorted(tuple(combination) for combination in actual)
+        expected = sorted(tuple(combination) for combination in expected)
+        assert actual == expected, f"{name}: expected {expected}, got {actual}"
+        return
+
+    if method_name == "letterCombinations":
+        digits, expected = case
+        actual = method(digits)
+        assert set(actual) == set(expected), f"{name}: expected {expected}, got {actual}"
         return
 
     if method_name == "longestPalindrome":
@@ -179,10 +273,12 @@ def run_case(name, file_name, class_name, method_name, case):
 
 
 def main():
+    case_count = 0
     for name, file_name, class_name, method_name, cases in TESTS:
-        for case_index, case in enumerate(cases, start=1):
+        for case in cases:
             run_case(name, file_name, class_name, method_name, case)
-    print(f"Validated {len(TESTS)} problem modules successfully.")
+            case_count += 1
+    print(f"Validated {len(TESTS)} problem modules ({case_count} cases) successfully.")
 
 
 if __name__ == "__main__":
