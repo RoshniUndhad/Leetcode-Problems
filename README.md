@@ -82,13 +82,17 @@ Each solution is intended to be reviewed through the same lens:
 5. Validate edge cases thoroughly.
 6. Document the final complexity and reasoning.
 
-## Validation
-
-The repository includes a lightweight validation script to test the core sample cases across the implemented problems:
+## Quick Start
 
 ```bash
-python validate_solutions.py
+python3 validate_solutions.py
 ```
+
+This runs a lightweight smoke test against the implemented problem modules and confirms the repository stays consistent as new solutions are added.
+
+## Validation
+
+The repository includes a lightweight validation script to test the core sample cases across the implemented problems. Use the command above after adding or modifying a solution to confirm the expected behavior still holds.
 
 ## Roadmap
 
