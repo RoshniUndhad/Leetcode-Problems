@@ -1,31 +1,54 @@
 # LeetCode Problem Solutions
 
-A curated collection of Python-based LeetCode solutions focused on clear reasoning, algorithmic patterns, and efficient implementations. This repository is organized by problem and designed for consistent DSA practice and revision.
+A collection of Python solutions to LeetCode problems, organized by problem number. Solutions focus on clear implementations of common data structures and algorithmic patterns.
 
-[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-orange?logo=leetcode)](https://leetcode.com/)
 [![Language](https://img.shields.io/badge/Language-Python-3776AB?logo=python)](https://www.python.org/)
-[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-12-success)](.)
-[![Repository](https://img.shields.io/badge/Repo-DSA%20Practice-black?logo=github)](.)
+[![Problems](https://img.shields.io/badge/Problems-18-success)](#problem-index)
 
-## Overview
+## Problem index
 
-This repository contains solutions to a growing set of LeetCode problems. Each folder is organized by problem number and title, with a solution file and a short problem statement summary. The emphasis is on understanding the pattern behind each solution, analyzing time and space complexity, and improving problem-solving habits over time.
+### Easy — 5
 
-## Progress
+| # | Problem | Solution |
+|---:|---|---|
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](./1-two-sum/two-sum.py) |
+| 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | [Python](./9-palindrome-number/palindrome-number.py) |
+| 13 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | [Python](./13-roman-to-integer/roman-to-integer.py) |
+| 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | [Python](./14-longest-common-prefix/longest-common-prefix.py) |
+| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [Python](./20-valid-parentheses/valid-parentheses.py) |
 
-| Difficulty | Count |
-|---|---:|
-| Easy | 5 |
-| Medium | 6 |
-| Hard | 1 |
-| Total | 12 |
+### Medium — 12
 
-## Repository Layout
+| # | Problem | Solution |
+|---:|---|---|
+| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [Python](./2-add-two-numbers/add-two-numbers.py) |
+| 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Python](./3-longest-substring-without-repeating-characters/longest-substring-without-repeating-characters.py) |
+| 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | [Python](./5-longest-palindromic-substring/longest-palindromic-substring.py) |
+| 6 | [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/) | [Python](./6-zigzag-conversion/zigzag-conversion.py) |
+| 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) | [Python](./7-reverse-integer/reverse-integer.py) |
+| 8 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | [Python](./8-string-to-integer-atoi/string-to-integer-atoi.py) |
+| 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | [Python](./11-container-with-most-water/container-with-most-water.py) |
+| 15 | [3Sum](https://leetcode.com/problems/3sum/) | [Python](./15-3sum/3sum.py) |
+| 16 | [3Sum Closest](https://leetcode.com/problems/3sum-closest/) | [Python](./16-3sum-closest/3sum-closest.py) |
+| 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [Python](./17-letter-combinations-of-a-phone-number/letter-combinations-of-a-phone-number.py) |
+| 18 | [4Sum](https://leetcode.com/problems/4sum/) | [Python](./18-4sum/4sum.py) |
+| 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [Python](./19-remove-nth-node-from-end-of-list/remove-nth-node-from-end-of-list.py) |
+
+### Hard — 1
+
+| # | Problem | Solution |
+|---:|---|---|
+| 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [Python](./4-median-of-two-sorted-arrays/median-of-two-sorted-arrays.py) |
+
+**Total: 18 solutions** (5 Easy, 12 Medium, 1 Hard).
+
+## Repository layout
+
+Each problem directory contains its Python solution and a `README.md` with problem details.
 
 ```text
 .
 ├── README.md
-├── .gitignore
 ├── validate_solutions.py
 ├── 1-two-sum/
 ├── 2-add-two-numbers/
@@ -39,74 +62,29 @@ This repository contains solutions to a growing set of LeetCode problems. Each f
 ├── 11-container-with-most-water/
 ├── 13-roman-to-integer/
 ├── 14-longest-common-prefix/
-└── ...
+├── 15-3sum/
+├── 16-3sum-closest/
+├── 17-letter-combinations-of-a-phone-number/
+├── 18-4sum/
+├── 19-remove-nth-node-from-end-of-list/
+└── 20-valid-parentheses/
 ```
 
-## Problem Index
+## Run the checks
 
-### Easy
-
-| # | Problem | Solution |
-|---|---|---|
-| 1 | Two Sum | [Open](./1-two-sum) |
-| 7 | Reverse Integer | [Open](./7-reverse-integer) |
-| 9 | Palindrome Number | [Open](./9-palindrome-number) |
-| 13 | Roman to Integer | [Open](./13-roman-to-integer) |
-| 14 | Longest Common Prefix | [Open](./14-longest-common-prefix) |
-
-### Medium
-
-| # | Problem | Solution |
-|---|---|---|
-| 2 | Add Two Numbers | [Open](./2-add-two-numbers) |
-| 3 | Longest Substring Without Repeating Characters | [Open](./3-longest-substring-without-repeating-characters) |
-| 5 | Longest Palindromic Substring | [Open](./5-longest-palindromic-substring) |
-| 6 | Zigzag Conversion | [Open](./6-zigzag-conversion) |
-| 8 | String to Integer (atoi) | [Open](./8-string-to-integer-atoi) |
-| 11 | Container With Most Water | [Open](./11-container-with-most-water) |
-
-### Hard
-
-| # | Problem | Solution |
-|---|---|---|
-| 4 | Median of Two Sorted Arrays | [Open](./4-median-of-two-sorted-arrays) |
-
-## Problem-Solving Workflow
-
-Each solution is intended to be reviewed through the same lens:
-
-1. Understand the problem carefully.
-2. Identify the underlying pattern or technique.
-3. Consider a brute-force solution.
-4. Optimize for time and space.
-5. Validate edge cases thoroughly.
-6. Document the final complexity and reasoning.
-
-## Quick Start
+Requires Python 3; no third-party packages are needed.
 
 ```bash
 python3 validate_solutions.py
 ```
 
-This runs a lightweight smoke test against the implemented problem modules and confirms the repository stays consistent as new solutions are added.
+The validation script runs representative examples and edge cases for every solution module.
 
-## Validation
+## Adding a solution
 
-The repository includes a lightweight validation script to test the core sample cases across the implemented problems. Use the command above after adding or modifying a solution to confirm the expected behavior still holds.
-
-## Roadmap
-
-- [x] Establish repository structure
-- [x] Add initial problem solutions
-- [x] Improve README quality and tracking
-- [x] Add repository-level validation script
-- [ ] Expand the set of solved problems
-- [ ] Add more detailed notes and complexity breakdowns per problem
-- [ ] Improve consistency across all solution folders
-
-## Notes
-
-The focus remains on building strong fundamentals, not just finishing a list of problems. Consistency, pattern recognition, and repeated review are the real long-term gains.
+1. Create a directory named `<problem-number>-<problem-title>` with the solution and its problem `README.md`.
+2. Add the module and sample/edge cases to `validate_solutions.py`.
+3. Add the problem to the matching difficulty table above and update the solution totals.
 
 ## Author
 

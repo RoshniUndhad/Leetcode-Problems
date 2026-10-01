@@ -3,11 +3,11 @@ class Solution:
         if numRows == 1 or numRows >= len(s):
             return s
 
-        rows = [""] * numRows
+        rows = [[] for _ in range(numRows)]
         row = 0
         direction = 1
         for char in s:
-            rows[row] += char
+            rows[row].append(char)
             if row == 0:
                 direction = 1
             elif row == numRows - 1:
@@ -15,5 +15,4 @@ class Solution:
 
             row += direction
 
-        return "".join(rows)
-
+        return "".join("".join(row) for row in rows)
